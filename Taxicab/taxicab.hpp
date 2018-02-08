@@ -1,14 +1,15 @@
-/**********************************************
+/*******************************************************
 ** Author: James Meehan
-** Taxicab Class 
-** Provides the location (x, y coordinates) and 
-**distance traveled of taxicab objects
-***********************************************/
+** Date: 04/19/2017
+** Description: This is the Taxicab class specification file.
+** The Taxicab class stores the cabs current x- and y-
+** coordinates and distance traveled of Taxicab objects and 
+** can return their coordinates and distance traveled. 
+*******************************************************/
 
-#include <iostream>
-
-using std::endl;
-using std::cout;
+// Taxicab class declaration
+#ifndef TAXICAB_HPP
+#define TAXICAB_HPP
 
 class Taxicab
 {
@@ -27,3 +28,4 @@ public:
 	void moveY(int);
 
 };
+#endif
