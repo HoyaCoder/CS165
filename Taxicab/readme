@@ -1,0 +1,3 @@
+** Taxicab class project **
+** Calculates the location (x, y coordinates) and distance traveled of taxicab objects **
+** Uses private and public variables, default and custom constructors, getter and move functions.
