@@ -1,0 +1,9 @@
+Vending Machine program.
+
+Snack class keeps track of the type of snack, its price, and the number of calories
+
+VendSlot class keeps track of the type of and amount of the snack in a slot in the machine.
+
+MiniVend class has four VendSlot class variables (to simulate 4 slots for snacks in the machine)
+The MiniVend class keeps track out of the amount of money in the machine, the number of empty slots in the machine,
+and the value of snacks currently in the machine.
