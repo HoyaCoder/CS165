@@ -1,3 +1,10 @@
+/************************************************************
+** Author: James Meehan
+** Date: 04/27/2017
+** Description: the findMedian function takes an array of ints 
+** and the size of the array as parameters and returns the 
+** median of the array.
+*************************************************************/
 #include <iostream>
 #include <algorithm>
 
