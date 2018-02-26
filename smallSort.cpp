@@ -1,65 +1,60 @@
-
+/************************************************************
+** Author: James Meehan
+** Date: 04/27/2017
+** Description: the smallSort2 function takes the addresses of 
+** three integer variables as parameters and sorts the integers 
+** at those addresses into ascending order.
+*************************************************************/
 
 #include <iostream>
 
-using std::cout;
-using std::endl;
-using std::cin;
+using namespace std;
 
-void smallSort(int &a, int &b, int &c);
+void smallSort2(int* a, int* b, int* c)
+{
+	if (*a > *b && *a > *c)
+	{
+		int temp = *a;
+		*a = *c;
+		*c = temp;
+
+		if (*a > *b)
+		{
+			temp = *a;
+			*a = *b;
+			*b = temp;
+
+		}
+	}
+	else if ((*a > *b && *a < *c) || (*a < *b && *a > *c))
+	{
+		int temp = *a;
+		*a = *b;
+		*b = temp;
+
+		if (*a > *c)
+		{
+			int temp = *a;
+			*a = *c;
+			*c = temp;
+		}
+	}
+	else
+	{
+		if (*b > *c)
+		{
+			int temp = *b;
+			*b = *c;
+			*c = temp;
+		}
+	}
+}
 
 int main()
 {
-	int a, b, c;
-	cout << "Please provide three numbers to be sorted: " << endl;
-	cin >> a >> b >> c;
-	smallSort(a, b, c);
-	cout << "Sorted: " << a << ", " << b << ", " << c << endl;
-
-	return 0;
-}
-
-void smallSort(int &a, int &b, int &c)
-{
-	int temp;
-
-	//sorting if a is the largest integer
-	if (a > b && a > c)
-	{
-		temp = c;
-		c = a;
-		a = temp;
-
-		if (a > b)
-		{
-			temp = a;
-			a = b;
-			b = temp;
-
-		}
-	}
-
-	//sorting if a is the middle integer
-	if ((a < b && a > c) || (a > b && a < c))
-	{
-		temp = a;
-		a = b;
-		b = temp;
-
-		if (a > c)
-		{
-			temp = a;
-			a = c;
-			c = temp;
-		}
-	}
-
-	//sorting if a is the lowest integer
-	if (a < b && a < c && b > c)
-	{
-		temp = b;
-		b = c;
-		c = temp;
-	}
-	
+	int a = 300;
+	int b = 20;
+	int c = 1;
+	smallSort2(&a, &b, &c);
+	cout << a << ", " << b << ", " << c << endl;
 }
