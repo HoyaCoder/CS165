@@ -1,0 +1,56 @@
+/********************************************
+** Author: James Meehan
+** Description: This program calculates the 
+** standard deviation of the ages of people
+** in a Person class array.
+*******************************************/
+
+#include <iostream>
+#include <cmath>
+#include "person.hpp"
+
+double stdDev(class Person person[], int size)
+{
+
+	double total = 0;
+	double diffTotal = 0;
+	double average;
+
+	// find the sum of all the ages
+	for (int i = 0; i < size; i++)
+	{
+		total += person[i].getAge();
+	}
+
+	// find the average of the ages
+	average = total / (size);
+	
+	// find the difference of each age vs. the mean
+	// and square the difference
+	for (int j = 0; j < size; j++)
+	{
+		diffTotal += (pow((person[j].getAge() - average), 2));
+	}
+
+	//calculate variance
+	double variance = diffTotal / (size);
+	
+	//calculate stdDev
+	double stdDev = sqrt(variance);
+
+	return stdDev;
+}
+
+int main()
+{
+	Person individual[4] = { { "Bob", 45 },{ "Tom", 55 },{ "Angela", 210 },{ "Steve", 77 } };
+
+	std::cout << "The people in the group are: " << endl;
+	for (int i = 0; i < 4; i++) {
+		std::cout << individual[i].getName() << " " << individual[i].getAge() << endl;
+	}
+
+	std::cout << endl << "The standard deviation of ages is: " << stdDev(individual, 4) << endl;
+
+	return 0;
+}
