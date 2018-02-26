@@ -52,9 +52,10 @@ void smallSort2(int* a, int* b, int* c)
 
 int main()
 {
-	int a = 300;
-	int b = 20;
-	int c = 1;
+	int a, b, c;
+	cout << "Please enter three numbers and I will sort them in ascending order: ";
+	cin >> a >> b >> c;
+	cout << endl;
 	smallSort2(&a, &b, &c);
 	cout << a << ", " << b << ", " << c << endl;
 }
