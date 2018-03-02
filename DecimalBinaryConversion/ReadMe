@@ -1,0 +1,4 @@
+decToBin: converts decimal to binary
+binToDec: converst binary to decimal
+converter: lets user choose decToBin or binToDec
+
